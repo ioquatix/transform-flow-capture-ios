@@ -1,0 +1,369 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E3BF9FF17CC7346005127F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3BF9FE17CC7346005127F2 /* UIKit.framework */; };
+		7E3BFA0117CC7346005127F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3BFA0017CC7346005127F2 /* Foundation.framework */; };
+		7E3BFA0917CC7346005127F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7E3BFA0717CC7346005127F2 /* InfoPlist.strings */; };
+		7E3BFA0B17CC7346005127F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BFA0A17CC7346005127F2 /* main.m */; };
+		7E3BFA0F17CC7346005127F2 /* ARVSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BFA0E17CC7346005127F2 /* ARVSAppDelegate.m */; };
+		7E3BFA1117CC7346005127F2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E3BFA1017CC7346005127F2 /* Default.png */; };
+		7E3BFA1317CC7346005127F2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E3BFA1217CC7346005127F2 /* Default@2x.png */; };
+		7E3BFA1517CC7346005127F2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E3BFA1417CC7346005127F2 /* Default-568h@2x.png */; };
+		7E3BFA2617CC73A6005127F2 /* ARVSMainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E3BFA1B17CC73A6005127F2 /* ARVSMainWindow.xib */; };
+		7E3BFA2717CC73A6005127F2 /* ARVSLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BFA1D17CC73A6005127F2 /* ARVSLogger.m */; };
+		7E3BFA2917CC73A6005127F2 /* ARVSCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BFA2117CC73A6005127F2 /* ARVSCaptureViewController.m */; };
+		7E3BFA2A17CC73A6005127F2 /* ARVSCaptureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BFA2317CC73A6005127F2 /* ARVSCaptureView.m */; };
+		7E3BFA2B17CC73A6005127F2 /* ARVSGraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BFA2517CC73A6005127F2 /* ARVSGraphView.m */; };
+		7E3BFA2E17CC73C6005127F2 /* ARVideoFrameController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BFA2D17CC73C6005127F2 /* ARVideoFrameController.m */; };
+		7E3BFA3117CC7425005127F2 /* ARGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BFA3017CC7425005127F2 /* ARGLView.m */; };
+		7E3BFA3417CC7577005127F2 /* ARVideoBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3BFA3317CC7577005127F2 /* ARVideoBackground.m */; };
+		7E3BFA3617CC75C8005127F2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3BFA3517CC75C8005127F2 /* CoreLocation.framework */; };
+		7E3BFA3817CC75CC005127F2 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3BFA3717CC75CC005127F2 /* CoreMotion.framework */; };
+		7E3BFA3A17CC75D6005127F2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3BFA3917CC75D6005127F2 /* AVFoundation.framework */; };
+		7E3BFA3C17CC75EB005127F2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3BFA3B17CC75EB005127F2 /* QuartzCore.framework */; };
+		7E3BFA3D17CC75F4005127F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3BFA0217CC7346005127F2 /* CoreGraphics.framework */; };
+		7E3BFA3F17CC760C005127F2 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3BFA3E17CC760C005127F2 /* ImageIO.framework */; };
+		7E3BFA4117CC7617005127F2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3BFA4017CC7617005127F2 /* CoreMedia.framework */; };
+		7E3BFA4317CC7620005127F2 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3BFA4217CC7620005127F2 /* CoreVideo.framework */; };
+		7E3BFA4517CC7628005127F2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E3BFA4417CC7628005127F2 /* OpenGLES.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7E3BF9FB17CC7346005127F2 /* Video Stream Capture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video Stream Capture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E3BF9FE17CC7346005127F2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7E3BFA0017CC7346005127F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7E3BFA0217CC7346005127F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7E3BFA0617CC7346005127F2 /* Video Stream Capture-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Video Stream Capture-Info.plist"; sourceTree = "<group>"; };
+		7E3BFA0817CC7346005127F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7E3BFA0A17CC7346005127F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7E3BFA0C17CC7346005127F2 /* Video Stream Capture-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Video Stream Capture-Prefix.pch"; sourceTree = "<group>"; };
+		7E3BFA0D17CC7346005127F2 /* ARVSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARVSAppDelegate.h; sourceTree = "<group>"; };
+		7E3BFA0E17CC7346005127F2 /* ARVSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARVSAppDelegate.m; sourceTree = "<group>"; };
+		7E3BFA1017CC7346005127F2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		7E3BFA1217CC7346005127F2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		7E3BFA1417CC7346005127F2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		7E3BFA1B17CC73A6005127F2 /* ARVSMainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ARVSMainWindow.xib; sourceTree = "<group>"; };
+		7E3BFA1C17CC73A6005127F2 /* ARVSLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARVSLogger.h; sourceTree = "<group>"; };
+		7E3BFA1D17CC73A6005127F2 /* ARVSLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARVSLogger.m; sourceTree = "<group>"; };
+		7E3BFA2017CC73A6005127F2 /* ARVSCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARVSCaptureViewController.h; sourceTree = "<group>"; };
+		7E3BFA2117CC73A6005127F2 /* ARVSCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARVSCaptureViewController.m; sourceTree = "<group>"; };
+		7E3BFA2217CC73A6005127F2 /* ARVSCaptureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARVSCaptureView.h; sourceTree = "<group>"; };
+		7E3BFA2317CC73A6005127F2 /* ARVSCaptureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARVSCaptureView.m; sourceTree = "<group>"; };
+		7E3BFA2417CC73A6005127F2 /* ARVSGraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARVSGraphView.h; sourceTree = "<group>"; };
+		7E3BFA2517CC73A6005127F2 /* ARVSGraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARVSGraphView.m; sourceTree = "<group>"; };
+		7E3BFA2C17CC73C6005127F2 /* ARVideoFrameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARVideoFrameController.h; sourceTree = "<group>"; };
+		7E3BFA2D17CC73C6005127F2 /* ARVideoFrameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARVideoFrameController.m; sourceTree = "<group>"; };
+		7E3BFA2F17CC7425005127F2 /* ARGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARGLView.h; sourceTree = "<group>"; };
+		7E3BFA3017CC7425005127F2 /* ARGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARGLView.m; sourceTree = "<group>"; };
+		7E3BFA3217CC7577005127F2 /* ARVideoBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARVideoBackground.h; sourceTree = "<group>"; };
+		7E3BFA3317CC7577005127F2 /* ARVideoBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARVideoBackground.m; sourceTree = "<group>"; };
+		7E3BFA3517CC75C8005127F2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		7E3BFA3717CC75CC005127F2 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		7E3BFA3917CC75D6005127F2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7E3BFA3B17CC75EB005127F2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7E3BFA3E17CC760C005127F2 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		7E3BFA4017CC7617005127F2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		7E3BFA4217CC7620005127F2 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		7E3BFA4417CC7628005127F2 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7E3BF9F817CC7346005127F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E3BFA4517CC7628005127F2 /* OpenGLES.framework in Frameworks */,
+				7E3BFA4317CC7620005127F2 /* CoreVideo.framework in Frameworks */,
+				7E3BFA4117CC7617005127F2 /* CoreMedia.framework in Frameworks */,
+				7E3BFA3F17CC760C005127F2 /* ImageIO.framework in Frameworks */,
+				7E3BFA3D17CC75F4005127F2 /* CoreGraphics.framework in Frameworks */,
+				7E3BFA3C17CC75EB005127F2 /* QuartzCore.framework in Frameworks */,
+				7E3BFA3A17CC75D6005127F2 /* AVFoundation.framework in Frameworks */,
+				7E3BFA3817CC75CC005127F2 /* CoreMotion.framework in Frameworks */,
+				7E3BFA3617CC75C8005127F2 /* CoreLocation.framework in Frameworks */,
+				7E3BF9FF17CC7346005127F2 /* UIKit.framework in Frameworks */,
+				7E3BFA0117CC7346005127F2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7E3BF9F217CC7346005127F2 = {
+			isa = PBXGroup;
+			children = (
+				7E3BFA0417CC7346005127F2 /* Video Stream Capture */,
+				7E3BF9FD17CC7346005127F2 /* Frameworks */,
+				7E3BF9FC17CC7346005127F2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7E3BF9FC17CC7346005127F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7E3BF9FB17CC7346005127F2 /* Video Stream Capture.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7E3BF9FD17CC7346005127F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E3BFA4417CC7628005127F2 /* OpenGLES.framework */,
+				7E3BFA4217CC7620005127F2 /* CoreVideo.framework */,
+				7E3BFA4017CC7617005127F2 /* CoreMedia.framework */,
+				7E3BFA3E17CC760C005127F2 /* ImageIO.framework */,
+				7E3BFA3B17CC75EB005127F2 /* QuartzCore.framework */,
+				7E3BFA3917CC75D6005127F2 /* AVFoundation.framework */,
+				7E3BFA3717CC75CC005127F2 /* CoreMotion.framework */,
+				7E3BFA3517CC75C8005127F2 /* CoreLocation.framework */,
+				7E3BF9FE17CC7346005127F2 /* UIKit.framework */,
+				7E3BFA0017CC7346005127F2 /* Foundation.framework */,
+				7E3BFA0217CC7346005127F2 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E3BFA0417CC7346005127F2 /* Video Stream Capture */ = {
+			isa = PBXGroup;
+			children = (
+				7E3BFA0D17CC7346005127F2 /* ARVSAppDelegate.h */,
+				7E3BFA0E17CC7346005127F2 /* ARVSAppDelegate.m */,
+				7E3BFA1B17CC73A6005127F2 /* ARVSMainWindow.xib */,
+				7E3BFA2F17CC7425005127F2 /* ARGLView.h */,
+				7E3BFA3017CC7425005127F2 /* ARGLView.m */,
+				7E3BFA2C17CC73C6005127F2 /* ARVideoFrameController.h */,
+				7E3BFA2D17CC73C6005127F2 /* ARVideoFrameController.m */,
+				7E3BFA3217CC7577005127F2 /* ARVideoBackground.h */,
+				7E3BFA3317CC7577005127F2 /* ARVideoBackground.m */,
+				7E3BFA2017CC73A6005127F2 /* ARVSCaptureViewController.h */,
+				7E3BFA2117CC73A6005127F2 /* ARVSCaptureViewController.m */,
+				7E3BFA2217CC73A6005127F2 /* ARVSCaptureView.h */,
+				7E3BFA2317CC73A6005127F2 /* ARVSCaptureView.m */,
+				7E3BFA1C17CC73A6005127F2 /* ARVSLogger.h */,
+				7E3BFA1D17CC73A6005127F2 /* ARVSLogger.m */,
+				7E3BFA2417CC73A6005127F2 /* ARVSGraphView.h */,
+				7E3BFA2517CC73A6005127F2 /* ARVSGraphView.m */,
+				7E3BFA0517CC7346005127F2 /* Supporting Files */,
+			);
+			path = "Video Stream Capture";
+			sourceTree = "<group>";
+		};
+		7E3BFA0517CC7346005127F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E3BFA0617CC7346005127F2 /* Video Stream Capture-Info.plist */,
+				7E3BFA0717CC7346005127F2 /* InfoPlist.strings */,
+				7E3BFA0A17CC7346005127F2 /* main.m */,
+				7E3BFA0C17CC7346005127F2 /* Video Stream Capture-Prefix.pch */,
+				7E3BFA1017CC7346005127F2 /* Default.png */,
+				7E3BFA1217CC7346005127F2 /* Default@2x.png */,
+				7E3BFA1417CC7346005127F2 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7E3BF9FA17CC7346005127F2 /* Video Stream Capture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E3BFA1817CC7346005127F2 /* Build configuration list for PBXNativeTarget "Video Stream Capture" */;
+			buildPhases = (
+				7E3BF9F717CC7346005127F2 /* Sources */,
+				7E3BF9F817CC7346005127F2 /* Frameworks */,
+				7E3BF9F917CC7346005127F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Video Stream Capture";
+			productName = "Video Stream Capture";
+			productReference = 7E3BF9FB17CC7346005127F2 /* Video Stream Capture.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7E3BF9F317CC7346005127F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ARVS;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Orion Transfer";
+			};
+			buildConfigurationList = 7E3BF9F617CC7346005127F2 /* Build configuration list for PBXProject "Video Stream Capture" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7E3BF9F217CC7346005127F2;
+			productRefGroup = 7E3BF9FC17CC7346005127F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7E3BF9FA17CC7346005127F2 /* Video Stream Capture */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E3BF9F917CC7346005127F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E3BFA0917CC7346005127F2 /* InfoPlist.strings in Resources */,
+				7E3BFA1117CC7346005127F2 /* Default.png in Resources */,
+				7E3BFA1317CC7346005127F2 /* Default@2x.png in Resources */,
+				7E3BFA1517CC7346005127F2 /* Default-568h@2x.png in Resources */,
+				7E3BFA2617CC73A6005127F2 /* ARVSMainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7E3BF9F717CC7346005127F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E3BFA0B17CC7346005127F2 /* main.m in Sources */,
+				7E3BFA0F17CC7346005127F2 /* ARVSAppDelegate.m in Sources */,
+				7E3BFA2717CC73A6005127F2 /* ARVSLogger.m in Sources */,
+				7E3BFA2917CC73A6005127F2 /* ARVSCaptureViewController.m in Sources */,
+				7E3BFA2A17CC73A6005127F2 /* ARVSCaptureView.m in Sources */,
+				7E3BFA2B17CC73A6005127F2 /* ARVSGraphView.m in Sources */,
+				7E3BFA2E17CC73C6005127F2 /* ARVideoFrameController.m in Sources */,
+				7E3BFA3117CC7425005127F2 /* ARGLView.m in Sources */,
+				7E3BFA3417CC7577005127F2 /* ARVideoBackground.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7E3BFA0717CC7346005127F2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7E3BFA0817CC7346005127F2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7E3BFA1617CC7346005127F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7E3BFA1717CC7346005127F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7E3BFA1917CC7346005127F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Video Stream Capture/Video Stream Capture-Prefix.pch";
+				INFOPLIST_FILE = "Video Stream Capture/Video Stream Capture-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7E3BFA1A17CC7346005127F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Video Stream Capture/Video Stream Capture-Prefix.pch";
+				INFOPLIST_FILE = "Video Stream Capture/Video Stream Capture-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7E3BF9F617CC7346005127F2 /* Build configuration list for PBXProject "Video Stream Capture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E3BFA1617CC7346005127F2 /* Debug */,
+				7E3BFA1717CC7346005127F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7E3BFA1817CC7346005127F2 /* Build configuration list for PBXNativeTarget "Video Stream Capture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E3BFA1917CC7346005127F2 /* Debug */,
+				7E3BFA1A17CC7346005127F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7E3BF9F317CC7346005127F2 /* Project object */;
+}
