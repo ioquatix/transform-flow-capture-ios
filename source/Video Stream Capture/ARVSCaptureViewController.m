@@ -89,7 +89,15 @@ double length(CMAcceleration vector) {
 
 		// Log device specific details:
 		[self.logger logWithFormat:@"Device, %@, %@", device.name, self.machineName];
+		
 		[self.logger logWithFormat:@"Motion Rate, %0.4f", _motionManager.deviceMotionUpdateInterval];
+		
+		// Try to log location and heading initially if possible:
+		if (self.locationManager.location)
+			[self locationManager:self.locationManager didUpdateLocations:@[self.locationManager.location]];
+
+		if (self.locationManager.heading)
+			[self locationManager:self.locationManager didUpdateHeading:self.locationManager.heading];
 	} else {
 		[self.logger close];
 		[self setLogger:nil];
@@ -144,20 +152,6 @@ double length(CMAcceleration vector) {
 	
 	[self.locationManager startUpdatingLocation];
 	[self.locationManager startUpdatingHeading];
-}
-
-- (void)setLogger:(ARVSLogger *)logger
-{
-	_logger = logger;
-
-	if (_logger) {
-		// Try to log location and heading initially if possible:
-		if (self.locationManager.location)
-			[self locationManager:self.locationManager didUpdateLocations:@[self.locationManager.location]];
-
-		if (self.locationManager.heading)
-			[self locationManager:self.locationManager didUpdateHeading:self.locationManager.heading];
-	}
 }
 
 - (void)motionManager:(CMMotionManager *)motionManager didUpdateMotion:(CMDeviceMotion *)motion
