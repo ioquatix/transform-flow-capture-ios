@@ -26,17 +26,13 @@ typedef CMAcceleration ARVSVelocity;
 	NSOperationQueue * _motionQueue;
 	CMMotionManager * _motionManager;
 	
-	NSTimeInterval _previousTime;
-	ARVSVelocity _currentVelocity;
-	
 	UITextView * _velocityTextView;
 	ARVSGraphView * _graphView;
 
 	NSTimeInterval _timestampOffset;
 }
 
-@property(nonatomic,strong) CLLocationManager * locationManager;
-
-@property(strong) ARVSLogger * logger;
+@property(nonatomic,retain) CLLocationManager * locationManager;
+@property(nonatomic,retain) ARVSLogger * logger;
 
 @end

@@ -22,7 +22,6 @@ double length(CMAcceleration vector) {
     return UIInterfaceOrientationMaskPortrait;
 }
 
-
 #pragma mark - Logging callbacks
 
 - (void)videoFrameController:(ARVideoFrameController *)controller didCaptureFrame:(CGImageRef)buffer atTime:(CMTime)time {	
@@ -119,7 +118,6 @@ double length(CMAcceleration vector) {
 		
 		[_motionManager setAccelerometerUpdateInterval:rate];
 		[_motionManager setDeviceMotionUpdateInterval:rate];
-		_previousTime = -1;
 	}
 	
 	[_motionManager startAccelerometerUpdatesToQueue:_motionQueue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
@@ -131,31 +129,7 @@ double length(CMAcceleration vector) {
 	}];
 	
 	[_motionManager startDeviceMotionUpdatesToQueue:_motionQueue withHandler:^(CMDeviceMotion *motion, NSError *error) {
-		CMAcceleration acceleration = motion.userAcceleration;
-		CMAcceleration gravity = motion.gravity;
-		CMRotationRate rotation = motion.rotationRate;
-				
-		[self.logger logWithFormat:@"Gyroscope, %0.4f, %0.6f, %0.6f, %0.6f", motion.timestamp, rotation.x, rotation.y, rotation.z];
-		[self.logger logWithFormat:@"Accelerometer, %0.4f, %0.6f, %0.6f, %0.6f", motion.timestamp, acceleration.x, acceleration.y, acceleration.z];
-		[self.logger logWithFormat:@"Gravity, %0.4f, %0.6f, %0.6f, %0.6f", motion.timestamp, gravity.x, gravity.y, gravity.z];
-		
-		if (_previousTime == -1) {
-			_previousTime = motion.timestamp;
-			return;
-		}
-		
-		NSTimeInterval delta = motion.timestamp - _previousTime;
-		ARVSVelocity velocity = _currentVelocity;
-		
-		if (length(acceleration) > 0.1) {
-			velocity.x += acceleration.x * delta;
-			velocity.y += acceleration.y * delta;
-			velocity.z += acceleration.z * delta;
-		}
-		
-		_currentVelocity = velocity;
-		
-		[self.logger logWithFormat:@"Velocity, %0.4f, %0.6f, %0.6f, %0.6f, %0.6f", motion.timestamp, delta, velocity.x, velocity.y, velocity.z];
+		[self motionManager:_motionManager didUpdateMotion:motion];
 	}];
 
 	NSTimeInterval uptime = [NSProcessInfo processInfo].systemUptime;
@@ -163,7 +137,7 @@ double length(CMAcceleration vector) {
 	_timestampOffset = nowTimeIntervalSince1970 - uptime;
 
 	self.locationManager = [[CLLocationManager alloc] init];
-	[self.locationManager setDesiredAccuracy:kCLLocationAccuracyBestForNavigation];
+	[self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
 	[self.locationManager setDelegate:self];
 	
 	[self.locationManager setHeadingOrientation:CLDeviceOrientationPortrait];
@@ -172,12 +146,44 @@ double length(CMAcceleration vector) {
 	[self.locationManager startUpdatingHeading];
 }
 
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
+- (void)setLogger:(ARVSLogger *)logger
+{
+	_logger = logger;
+
+	if (_logger) {
+		// Try to log location and heading initially if possible:
+		if (self.locationManager.location)
+			[self locationManager:self.locationManager didUpdateLocations:@[self.locationManager.location]];
+
+		if (self.locationManager.heading)
+			[self locationManager:self.locationManager didUpdateHeading:self.locationManager.heading];
+	}
+}
+
+- (void)motionManager:(CMMotionManager *)motionManager didUpdateMotion:(CMDeviceMotion *)motion
+{
+	CMAcceleration acceleration = motion.userAcceleration;
+	CMAcceleration gravity = motion.gravity;
+	CMRotationRate rotation = motion.rotationRate;
+	CMCalibratedMagneticField magneticField = motion.magneticField;
+
+	// These four records together constitute a single motion update.
+	[self.logger logWithFormat:@"Gyroscope, %0.4f, %0.6f, %0.6f, %0.6f", motion.timestamp, rotation.x, rotation.y, rotation.z];
+	[self.logger logWithFormat:@"Accelerometer, %0.4f, %0.6f, %0.6f, %0.6f", motion.timestamp, acceleration.x, acceleration.y, acceleration.z];
+	[self.logger logWithFormat:@"Gravity, %0.4f, %0.6f, %0.6f, %0.6f", motion.timestamp, gravity.x, gravity.y, gravity.z];
+	[self.logger logWithFormat:@"Calibrated Magnetic Field, %0.4f, %0.6f, %0.6f, %0.6f, %0.6f, %0.6f, %0.6f", motion.timestamp, magneticField.field.x, magneticField.field.y, magneticField.field.z, magneticField.accuracy];
+	[self.logger logWithFormat:@"Motion, %0.4f", motion.timestamp];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+	CLLocation * newLocation = locations.lastObject;
+
 	CLLocationCoordinate2D coordinate = newLocation.coordinate;
 
 	NSTimeInterval timestamp = newLocation.timestamp.timeIntervalSince1970 - _timestampOffset;
 
-	[self.logger logWithFormat:@"Location, %0.4f, %0.6f, %0.6f, %0.4f, %0.4f", timestamp, coordinate.latitude, coordinate.longitude, newLocation.horizontalAccuracy, newLocation.verticalAccuracy];
+	[self.logger logWithFormat:@"Location, %0.4f, %0.6f, %0.6f, %0.4f, %0.4f, %0.4f", timestamp, coordinate.latitude, coordinate.longitude, newLocation.altitude, newLocation.horizontalAccuracy, newLocation.verticalAccuracy];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
