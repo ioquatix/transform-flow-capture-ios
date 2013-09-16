@@ -152,7 +152,8 @@
 				7E3BFA2517CC73A6005127F2 /* ARVSGraphView.m */,
 				7E3BFA0517CC7346005127F2 /* Supporting Files */,
 			);
-			path = "Video Stream Capture";
+			name = "Video Stream Capture";
+			path = "source/Video Stream Capture";
 			sourceTree = "<group>";
 		};
 		7E3BFA0517CC7346005127F2 /* Supporting Files */ = {
@@ -323,8 +324,8 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Video Stream Capture/Video Stream Capture-Prefix.pch";
-				INFOPLIST_FILE = "Video Stream Capture/Video Stream Capture-Info.plist";
+				GCC_PREFIX_HEADER = "source/Video Stream Capture/Video Stream Capture-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/source/Video Stream Capture/Video Stream Capture-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -335,8 +336,8 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Video Stream Capture/Video Stream Capture-Prefix.pch";
-				INFOPLIST_FILE = "Video Stream Capture/Video Stream Capture-Info.plist";
+				GCC_PREFIX_HEADER = "source/Video Stream Capture/Video Stream Capture-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/source/Video Stream Capture/Video Stream Capture-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

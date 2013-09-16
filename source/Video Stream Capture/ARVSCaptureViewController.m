@@ -29,7 +29,7 @@ double length(CMAcceleration vector) {
 	if (self.logger) {
 		NSLog(@"Saving frame %d", _frameOffset);
 		
-		[self.logger logWithFormat:@"Frame Captured, %d, %0.4f", _frameOffset, CMTimeGetSeconds(time)]; 
+		[self.logger logWithFormat:@"Frame, %0.4f, %d", CMTimeGetSeconds(time), _frameOffset];
 		[self.logger logImage:buffer withFormat:@"%d", _frameOffset];
 		
 		_frameOffset += 1;
@@ -119,7 +119,7 @@ double length(CMAcceleration vector) {
 		
 		[_motionManager setAccelerometerUpdateInterval:rate];
 		[_motionManager setDeviceMotionUpdateInterval:rate];
-		_previousTime = -1;		
+		_previousTime = -1;
 	}
 	
 	[_motionManager startAccelerometerUpdatesToQueue:_motionQueue withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
@@ -130,7 +130,7 @@ double length(CMAcceleration vector) {
 		[_graphView addPoints:points];
 	}];
 	
-	[_motionManager startDeviceMotionUpdatesToQueue:_motionQueue withHandler:^(CMDeviceMotion *motion, NSError *error) {		
+	[_motionManager startDeviceMotionUpdatesToQueue:_motionQueue withHandler:^(CMDeviceMotion *motion, NSError *error) {
 		CMAcceleration acceleration = motion.userAcceleration;
 		CMAcceleration gravity = motion.gravity;
 		CMRotationRate rotation = motion.rotationRate;
@@ -150,7 +150,7 @@ double length(CMAcceleration vector) {
 		if (length(acceleration) > 0.1) {
 			velocity.x += acceleration.x * delta;
 			velocity.y += acceleration.y * delta;
-			velocity.z += acceleration.z * delta;	
+			velocity.z += acceleration.z * delta;
 		}
 		
 		_currentVelocity = velocity;
